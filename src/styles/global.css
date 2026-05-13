@@ -46,6 +46,11 @@ h4 {
   border: 1px solid #d6e2da;
   border-radius: 1rem;
   backdrop-filter: blur(6px);
+  box-shadow:
+    0 8px 24px rgba(11, 127, 101, 0.14),
+    0 0 0 1px rgba(11, 127, 101, 0.08),
+    0 0 26px rgba(11, 127, 101, 0.18);
+  transition: box-shadow 220ms ease, transform 220ms ease;
 }
 
 .fade-up {

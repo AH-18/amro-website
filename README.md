@@ -46,8 +46,8 @@ Use international format without `+` or spaces.
 1. Push this project to GitHub.
 2. In Cloudflare Pages, create a new project from that repository.
 3. Build settings:
-	- Build command: `npm run build`
-	- Build output directory: `dist`
+   - Build command: `npm run build`
+   - Build output directory: `dist`
 4. Deploy.
 
 This setup keeps monthly hosting cost near zero on the free tier.
