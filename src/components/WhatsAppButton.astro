@@ -1,0 +1,14 @@
+---
+const phone = '201000000000';
+const message = encodeURIComponent('Hi, I would like to ask about your services.');
+---
+
+<a
+  href={`https://wa.me/${phone}?text=${message}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Open WhatsApp chat"
+  class="fixed bottom-4 right-4 z-50 rounded-full bg-[var(--brand)] px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-[var(--brand-dark)]"
+>
+  WhatsApp
+</a>

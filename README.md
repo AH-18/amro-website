@@ -1,46 +1,53 @@
-# Astro Starter Kit: Basics
+# Amro Studio Showcase Website
+
+Static showcase website built with Astro + Tailwind CSS.
+
+## Scope Included
+
+- 5 pages: Home, About, Services, Projects, Contact
+- Project gallery section
+- Contact form (Formspree endpoint placeholder)
+- WhatsApp click-to-chat integration
+- Responsive layout for mobile, tablet, and desktop
+- Build output ready for Cloudflare Pages deployment
+
+## Run Locally
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Production build:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Form Setup
 
-## 🧞 Commands
+1. Create a Formspree form (or Web3Forms account).
+2. Open `src/pages/contact.astro`.
+3. Replace `https://formspree.io/f/your-form-id` with your real endpoint.
 
-All commands are run from the root of the project, from a terminal:
+## WhatsApp Setup
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Update the WhatsApp number in these files:
 
-## 👀 Want to learn more?
+- `src/components/WhatsAppButton.astro`
+- `src/components/Footer.astro`
+- `src/pages/contact.astro`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Use international format without `+` or spaces.
+
+## Deploy To Cloudflare Pages
+
+1. Push this project to GitHub.
+2. In Cloudflare Pages, create a new project from that repository.
+3. Build settings:
+	- Build command: `npm run build`
+	- Build output directory: `dist`
+4. Deploy.
+
+This setup keeps monthly hosting cost near zero on the free tier.

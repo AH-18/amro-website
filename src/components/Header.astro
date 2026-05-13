@@ -1,0 +1,42 @@
+---
+const { currentPath = '/' } = Astro.props;
+
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-emerald-100/70 bg-white/75 backdrop-blur">
+  <div class="page-shell flex items-center justify-between py-5 sm:py-6">
+    <a href="/" class="flex items-center">
+      <img src="/logo.png" alt="Amro Studio" class="h-12 w-auto sm:h-14" />
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="flex flex-wrap items-center gap-2 text-base font-medium sm:gap-3">
+        {
+          navItems.map((item) => {
+            const isActive = item.href === currentPath;
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[
+                    'rounded-full px-4 py-2.5 transition',
+                    isActive ? 'bg-emerald-700 text-white' : 'text-slate-700 hover:bg-emerald-50 hover:text-emerald-800',
+                  ]}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

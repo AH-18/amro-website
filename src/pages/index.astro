@@ -1,11 +1,59 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const highlights = [
+	{ title: 'Fast Performance', text: 'Static architecture keeps pages lightning fast and SEO friendly.' },
+	{ title: 'Clean UI', text: 'Modern visuals focused on content clarity and conversion.' },
+	{ title: 'Low Cost', text: 'Cloudflare Pages + lightweight tools minimize recurring expenses.' },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Home | Amro Studio"
+	description="Modern showcase website design and development for small businesses."
+	path="/"
+>
+	<section class="page-shell py-14 sm:py-20">
+		<div class="glass-card fade-up grid gap-8 p-7 sm:grid-cols-[1.1fr_0.9fr] sm:p-10">
+			<div>
+				<p class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">Showcase Website</p>
+				<h1 class="mt-3 text-3xl leading-tight sm:text-5xl">Simple. Modern. Ready To Launch.</h1>
+				<p class="mt-4 max-w-xl text-[15px] leading-7 text-[var(--muted)] sm:text-base">
+					We build business showcase websites that are clean, fully responsive, and optimized for performance.
+					Designed to look premium without monthly infrastructure overhead.
+				</p>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<a href="/projects" class="rounded-full bg-[var(--brand)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand-dark)]">
+						View Projects
+					</a>
+					<a href="/contact" class="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[var(--brand)] hover:text-[var(--brand-dark)]">
+						Start A Project
+					</a>
+				</div>
+			</div>
+
+			<div class="fade-up delay-1 rounded-2xl bg-gradient-to-br from-emerald-700 to-emerald-500 p-6 text-white">
+				<p class="text-sm uppercase tracking-[0.2em] text-emerald-100">Phase 1 Includes</p>
+				<ul class="mt-4 space-y-3 text-sm leading-6 sm:text-base">
+					<li>5 pages with shared modern layout</li>
+					<li>Project gallery with visual cards</li>
+					<li>Contact form + WhatsApp click-to-chat</li>
+					<li>Basic SEO + mobile-first responsiveness</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="page-shell pb-14">
+		<div class="grid gap-4 sm:grid-cols-3">
+			{
+				highlights.map((item, idx) => (
+					<article class:list={['glass-card p-6', idx === 1 ? 'fade-up delay-1' : idx === 2 ? 'fade-up delay-2' : 'fade-up']}>
+						<h2 class="text-lg">{item.title}</h2>
+						<p class="mt-2 text-sm leading-7 text-[var(--muted)]">{item.text}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
 </Layout>
